@@ -18,32 +18,35 @@ import {
 	SearchWrapper
 }from './style'
 
-const getListArea = (show) => {
-	if(show){
-		return (
-				<SearchInfo>
-					<SearchInfoTitle>
-						热门搜索
-						<SearchInfoSwitch>换一批</SearchInfoSwitch>
-					</SearchInfoTitle>
-					<SearchInfoList>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-						<SearchInfoItem>教育</SearchInfoItem>
-					</SearchInfoList>
-				</SearchInfo>
-			)
-	}else {
-		return null;
-	}
-}
+
 
 class Header extends Component {
+	getListArea(){
+		const {focused, list} = this.props;
+		if(focused){
+			return (
+					<SearchInfo>
+						<SearchInfoTitle>
+							热门搜索
+							<SearchInfoSwitch>换一批</SearchInfoSwitch>
+						</SearchInfoTitle>
+						<SearchInfoList>
+							{
+								list.map((item) => {
+									
+									return <SearchInfoItem key={item}>{item}</SearchInfoItem>
+								})
+							}
+							
+						</SearchInfoList>
+					</SearchInfo>
+				)
+		}else {
+			return null;
+		}
+}
 	render(){
+		const {focused, handleInputFocus, handleInputBlur} = this.props;
 		return (
 			<HeaderWrapper>
 				<Logo />
@@ -56,18 +59,18 @@ class Header extends Component {
 					</NavItem>
 					<SearchWrapper>
 						<CSSTransition
-							in={this.props.focused}
+							in={focused}
 							timeout={200}
 							classNames="slide"
 						>
 							<NavSearch
-								className={this.props.focused ? 'focused' : ''}
-								onFocus={this.props.handleInputFocus}
-								onBlur={this.props.handleInputBlur}
+								className={focused ? 'focused' : ''}
+								onFocus={handleInputFocus}
+								onBlur={handleInputBlur}
 							></NavSearch>
 						</CSSTransition>
-					<i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe60c;</i>
-					{getListArea(this.props.focused)}
+					<i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe60c;</i>
+					{this.getListArea()}
 				</SearchWrapper>
 				</Nav>
 				<Addition>
@@ -84,13 +87,15 @@ class Header extends Component {
 
 const mapStateToProps = (state) => {
 		return {
-			focused: state.getIn(['header', 'focused'])
+			focused: state.getIn(['header', 'focused']),
+			list: state.getIn(['header', 'list'])
 		
 		}
 	}
 const mapDispatchToProps = (dispatch) => {
 	return {
 		handleInputFocus(){			
+			dispatch(actionCreators.getList());
 			dispatch(actionCreators.searchFocus());
 		},
 		handleInputBlur(){
