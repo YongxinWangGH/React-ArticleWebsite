@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {actionCreators} from './store'
 import {connect} from 'react-redux';
@@ -18,9 +18,34 @@ import {
 	SearchWrapper
 }from './style'
 
-const Header = (props) => {
-	return (
-		<HeaderWrapper>
+const getListArea = (show) => {
+	if(show){
+		return (
+				<SearchInfo>
+					<SearchInfoTitle>
+						热门搜索
+						<SearchInfoSwitch>换一批</SearchInfoSwitch>
+					</SearchInfoTitle>
+					<SearchInfoList>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+						<SearchInfoItem>教育</SearchInfoItem>
+					</SearchInfoList>
+				</SearchInfo>
+			)
+	}else {
+		return null;
+	}
+}
+
+class Header extends Component {
+	render(){
+		return (
+			<HeaderWrapper>
 				<Logo />
 				<Nav>
 					<NavItem className="left active">Home</NavItem>
@@ -31,43 +56,30 @@ const Header = (props) => {
 					</NavItem>
 					<SearchWrapper>
 						<CSSTransition
-							in={props.focused}
+							in={this.props.focused}
 							timeout={200}
 							classNames="slide"
 						>
 							<NavSearch
-								className={props.focused ? 'focused' : ''}
-								onFocus={props.handleInputFocus}
-								onBlur={props.handleInputBlur}
+								className={this.props.focused ? 'focused' : ''}
+								onFocus={this.props.handleInputFocus}
+								onBlur={this.props.handleInputBlur}
 							></NavSearch>
 						</CSSTransition>
-					<i className={props.focused ? 'focused iconfont' : 'iconfont'}>&#xe60c;</i>
-					<SearchInfo>
-						<SearchInfoTitle>
-							热门搜索
-							<SearchInfoSwitch>换一批</SearchInfoSwitch>
-						</SearchInfoTitle>
-						<SearchInfoList>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-							<SearchInfoItem>教育</SearchInfoItem>
-						</SearchInfoList>
-					</SearchInfo>
+					<i className={this.props.focused ? 'focused iconfont' : 'iconfont'}>&#xe60c;</i>
+					{getListArea(this.props.focused)}
 				</SearchWrapper>
 				</Nav>
 				<Addition>
-				<Button className="writing">
-					<i className="iconfont">&#xe616;</i>
-					Create Articles
-				</Button>
-				<Button className="reg">Register</Button>					
-			</Addition>
+					<Button className="writing">
+						<i className="iconfont">&#xe616;</i>
+						Create Articles
+					</Button>
+					<Button className="reg">Register</Button>					
+				</Addition>
 			</HeaderWrapper>
 		)
+	}
 }
 
 const mapStateToProps = (state) => {
