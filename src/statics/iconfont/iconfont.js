@@ -2,12 +2,12 @@ import {createGlobalStyle} from 'styled-components';
 
 export const GlobalIconFont = createGlobalStyle`
 @font-face {font-family: "iconfont";
-  src: url('./iconfont.eot?t=1550624902396'); /* IE9 */
-  src: url('./iconfont.eot?t=1550624902396#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPEAAsAAAAAB7gAAAN3AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqCeIJlATYCJAMQCwoABCAFhG0HQxvSBsgekkQBcCxIAABwoBKC58m//HNnZjfzELJKPghXVGVVkapPVLza73cf97ioJlGtT/aJ3Zv7izaG6WKRSihmiaQeaR864H8+z+X4rrIE5rcslzUXdc+PegHGWwPbE9sWBVwguTeMXdASj0MAlzQqIa3aDE6yKAzmOAFk0nhdYlEZG6aBKliEYMVSg2wjgFXr1Qtga/B9+UANsaAIaMyp3cZ0qaz1tf+6jl72fxmDPAebpvMAbBVooBJgQMZV+kYQGuUqoXHV3mHUASwWBVN1xL2u83+kOIrOWn5Qg/88CWKW+wDUgnkNr31HCAWv42RV+jpQ8QBHGQAsEAJMg3Eck53CjQ0KsTbWi/PTwt0+fi93otd/wG5azKGEWenc2wiuuHfcDa9ked++K8GdGk0dnGTZKW/jfZGFMdPXOZKd3Sczs1dWVu+NOU17p01NLH/m9M1IittmZ/c+8mHk7mOVLrp1277Wd3dmr137au9neeLw7TJzE3Y9uTOm7XO5Vs+jw/6PaPkxocnIVEiLEWbzp/nNTLqpV1UCzavw4mkzfrDXsVn9/5C+dJsY+zsp41tGGtVKTxaNHr1XmTpCtt+7t0NbYmTW26k02ablrIqv0aP/Ll3sXXvjq1p+7uxyjcU4oparFUjii+GraN1pddWtX+8i0h+0G3Xa6/yM6rWd1jamgEkIzlHjhqhPA+dkUeFh1c78YqbBgP/rdCD2PLd1M1hQX9fLfttvGPemQuzQxEa/rGcAyN3xdA2M/NfQTc+7l3eW/yR5xwqjKU27MYrKkel+Q7XUOBTg4gK/pgRRFE8RiIXEI1guh1CEkAqNJZ0wrEoI4FELQSxN4VKRtqs9oplBKGIcoAKrAYQILkARxm1oInhJGFYRAsTxCUEiRMOlj0Rv6VFGxrstZ6BEqIK8BKbCPc12UkxIHUd9zpFEWhlwplEEzSRUV6mWL/agh2KKGcF5vYZIA01wF7rBaeg4HHzBLVSowiDy6yurjql6UoXCXRZDSwSIBIGoACNYAhiPAsdD82oTMYXPj4PozOEgIRpoVdFpEEEQs3ugOlWo1oHo0XmdaLdyzkzm0alhFoQGMAYBxwVoAzyIY+U4wLTqQRaIAlHBuAEZn3qqompjuuoqlje4b7gOcDG3NKJEi5EAqvnwmDHDPV2VLNPrEzl/titx2WQMAA==') format('woff2'),
-  url('./iconfont.woff?t=1550624902396') format('woff'),
-  url('./iconfont.ttf?t=1550624902396') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-  url('./iconfont.svg?t=1550624902396#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('./iconfont.eot?t=1555140869150'); /* IE9 */
+  src: url('./iconfont.eot?t=1555140869150#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQEAAsAAAAACEwAAAO4AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqDaINFATYCJAMUCwwABCAFhG0HShtTB8gOJSHBwABgAABgPHwt3ft7e5dkQ+mqqFp9l1VFSFQUSIRCNWnASAYVRTWC//839QJVkqkzs4orMjHkkRIjh7yJqCWdfql/1Q4OF7csgXmW5TLH8KIBGE2gwMYeFgX6/yD/ovzD2AUtcT2BYl4fxFlWAQsBMrNbIPqaRYSAjEJuSA9toakYm8UT+GqnB/IegMfg5+MPwiKApK6Yfa9vMhVI+TR/KqUm1U0yyFPBvOl0YJOosAFk4rbS0EdFgQ2Uov6djyOgaEvSp/lD8w9Rn0rr6tA4BxIV6x8elSwJomGmDoEjFMx8mh0yFZ/NGVXCKEgm8V3Kepa1alDQwQuAAZjYWcJ03UeNNwoImDY1N7cfyZ5/Ds+esQTLEV6vMNnD8+m4Sc9LhQse6R7QoPTMLG0z9R+woj29rmU/8axpLkCJ8kbPeUBMFoTJwWIJ3LFdMGm3ae5Vgrhvyl/0Eh4PP0aj58+5ud5krilXPmYcWoZWnNfj4TZ8lZdv6nOupGTZcWH5M3bZqsidz71Fn7HPKlsuu1V1rn//N8HuVHLmsWMzyZSJ5pdSzvtUV/ucH5i+uWoKzq/r9FFwSc1+3CPjMapfJ6V7rEnFHJkmaUlen6okN74eE0z4HgfpPXmt3mBTfkrcuyECvtuqWVXrrr+7toeQwa43CG3oi9PJxVeuLKEsqielFlN6Mk86DqpE6PXhQ1zk4l/k5P37JlOYim3kZHIKovlU+C7IPJ867cL/zw27XMtRTrMHjNCYgoVz2zI+Lf1GkBVDlEcDR7TE3Y8HZ3TtCTEA/3XVJSqgerqLVAoMYeosNemP/46PpfN3DG2Q8D/AlMG794gvtP1jH+gmgN8m1Jn5f5kdc7LGNpV1VjIdhmKs7aQUklpS8FctE95OY5oGiS60ORNC0jIHlbYFRMZsQK3rABpth1Csy57cNclAidzBmukAwpiDkIx4hcqY+4iMeQO1Gd+hMRYUFL1oMmfXUmh0uoFEjBRGGs1osu5UbTWmw/QyZBluF400O8DxyHBrbiY0KCQfzkZOZEwxwD3CEoaxyqiG7mCywGbIbtcZl6FbkYyDKjB2xQUHq1UvCpJ1B9BOGRARhigYktEYGpnOSfWKY3Th+8sgFsPZiYyGrColDzG4afUzQgUJ6YDIFjg7Zd3KJW4jWITBMBVDZdA5MLKADrFbAR3DVd3KCpFhQSoG+FziBKNCaldB0PIixzuugcLcr44UVeSoo5HvXJqTTBVpVXRaFNGqeU38Rw93iLqkAQA=') format('woff2'),
+  url('./iconfont.woff?t=1555140869150') format('woff'),
+  url('./iconfont.ttf?t=1555140869150') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('./iconfont.svg?t=1555140869150#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -16,6 +16,10 @@ export const GlobalIconFont = createGlobalStyle`
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-spin:before {
+  content: "\e851";
 }
 
 .icon-Aa:before {
@@ -28,5 +32,5 @@ export const GlobalIconFont = createGlobalStyle`
 
 .icon-yumaobi:before {
   content: "\e616";
-}`
-
+}
+`
